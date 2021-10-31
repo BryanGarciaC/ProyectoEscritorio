@@ -16,5 +16,30 @@ namespace ProyectoEscritorio
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Refrescar();
+        }
+
+        public void Refrescar()
+        {
+            DsModeloTableAdapters.UsuarioTableAdapter ta = new DsModeloTableAdapters.UsuarioTableAdapter();
+
+            DsModelo.UsuarioDataTable dt = ta.GetData();
+
+            dataGridView1.DataSource = dt;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuario = new FrmUsuario();
+            frmUsuario.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
